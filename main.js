@@ -2,13 +2,7 @@ let audio = document.getElementById("audio");
 let count = 0;
 
 $("#watch").click(function (e) {
-  if (count == 0) {
-    count = 1;
     audio.play();
-  } else {
-    count = 0;
-    audio.pause();
-  }
   e.preventDefault();
 });
 
@@ -60,58 +54,58 @@ $("#watch").click(function (e) {
 
     drawLine(
       ctx,
-      205,
-      220,
-      x2(time.hours, 12, 205, 75),
-      y2(time.hours, 12, 220, 75),
+      200,
+      200,
+      x2(time.hours, 12, 200, 55),
+      y2(time.hours, 12, 200, 55),
       4,
       "rgba(2,2,6,255)"
     ); // hours
-    drawCircle(ctx, 205, 220, 7, 7, "rgba(2,2,6,255)", "rgba(2,2,6,255)");
+    drawCircle(ctx, 200, 200, 7, 7, "rgba(2,2,6,255)", "rgba(2,2,6,255)");
     drawCircle(
       ctx,
-      x2(time.hours, 12, 205, 75),
-      y2(time.hours, 12, 220, 75),
-      8,
-      8,
+      x2(time.hours, 12, 200, 55),
+      y2(time.hours, 12, 200, 55),
+      5,
+      5,
       "rgba(244,244,244,255)",
       "rgba(244,244,244,255)"
     );
 
     drawLine(
       ctx,
-      205,
-      220,
-      x2(time.minutes, 60, 205, 95),
-      y2(time.minutes, 60, 220, 95),
+      200,
+      200,
+      x2(time.minutes, 60, 200, 75),
+      y2(time.minutes, 60, 200, 75),
       4,
       "rgba(2,2,6,255)"
     ); // minutes
 
-    drawCircle(ctx, 205, 220, 5, 7, "rgba(86,86,86,255)", "rgba(86,86,86,255)");
+    drawCircle(ctx, 200, 200, 5, 7, "rgba(86,86,86,255)", "rgba(86,86,86,255)");
     drawCircle(
       ctx,
-      x2(time.minutes, 60, 205, 95),
-      y2(time.minutes, 60, 220, 95),
-      8,
-      8,
+      x2(time.minutes, 60, 200, 75),
+      y2(time.minutes, 60, 200, 75),
+      5,
+      5,
       "rgba(244,244,244,255)",
       "rgba(244,244,244,255)"
     );
 
     drawLine(
       ctx,
-      205,
-      220,
-      x2(time.seconds, 60, 205, 115),
-      y2(time.seconds, 60, 220, 115),
+      200,
+      200,
+      x2(time.seconds, 60, 200, 95),
+      y2(time.seconds, 60, 200, 95),
       4,
       "rgba(2,2,6,255)"
     ); // seconds
     drawCircle(
       ctx,
-      205,
-      220,
+      200,
+      200,
       2,
       7,
       "rgba(164,164,164,255)",
@@ -119,10 +113,10 @@ $("#watch").click(function (e) {
     );
     drawCircle(
       ctx,
-      x2(time.seconds, 60, 205, 115),
-      y2(time.seconds, 60, 220, 115),
-      8,
-      8,
+      x2(time.seconds, 60, 200, 95),
+      y2(time.seconds, 60, 200, 95),
+      5,
+      5,
       "rgba(244,244,244,255)",
       "rgba(244,244,244,255)"
     );
