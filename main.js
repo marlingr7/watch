@@ -1,8 +1,5 @@
-let audio = document.getElementById("audio");
-let count = 0;
-
 $("#watch").click(function (e) {
-    audio.play();
+  document.getElementById("audio").play();
   e.preventDefault();
 });
 
@@ -19,10 +16,8 @@ $("#watch").click(function (e) {
     var date = new Date();
     return {
       hours: date.getHours(),
-      minutes:
-        date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
-      seconds:
-        date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds(),
+      minutes: date.getMinutes(),
+      seconds: date.getSeconds(),
     };
   }
 
@@ -48,60 +43,114 @@ $("#watch").click(function (e) {
   }
 
   function startClock(ctx) {
-    var time = getTime();
+    let time = getTime();
+    let hourOp;
+    let minutesOp;
+    let secondsOp;
+
+    if (time.hours < 6) {
+      hourOp = time.hours + 6;
+    } else {
+      hourOp = time.hours - 6;
+    }
+
+    if (time.minutes < 30) {
+      minutesOp = time.minutes + 30;
+      secondsOp = time.seconds + 30;
+    } else {
+      minutesOp = time.minutes - 30;
+      secondsOp = time.seconds + 30;
+    }
 
     ctx.clearRect(0, 0, 500, 500); // reset canvas
 
+    //Long lines
     drawLine(
       ctx,
       200,
       200,
       x2(time.hours, 12, 200, 55),
       y2(time.hours, 12, 200, 55),
-      4,
+      3,
       "rgba(2,2,6,255)"
-    ); // hours
-    drawCircle(ctx, 200, 200, 7, 7, "rgba(2,2,6,255)", "rgba(2,2,6,255)");
-    drawCircle(
-      ctx,
-      x2(time.hours, 12, 200, 55),
-      y2(time.hours, 12, 200, 55),
-      5,
-      5,
-      "rgba(244,244,244,255)",
-      "rgba(244,244,244,255)"
     );
-
     drawLine(
       ctx,
       200,
       200,
       x2(time.minutes, 60, 200, 75),
       y2(time.minutes, 60, 200, 75),
-      4,
+      3,
       "rgba(2,2,6,255)"
-    ); // minutes
-
-    drawCircle(ctx, 200, 200, 5, 7, "rgba(86,86,86,255)", "rgba(86,86,86,255)");
-    drawCircle(
-      ctx,
-      x2(time.minutes, 60, 200, 75),
-      y2(time.minutes, 60, 200, 75),
-      5,
-      5,
-      "rgba(244,244,244,255)",
-      "rgba(244,244,244,255)"
     );
-
     drawLine(
       ctx,
       200,
       200,
       x2(time.seconds, 60, 200, 95),
       y2(time.seconds, 60, 200, 95),
-      4,
+      3,
       "rgba(2,2,6,255)"
-    ); // seconds
+    );
+    //Short lines
+    drawLine(
+      ctx,
+      200,
+      200,
+      x2(hourOp, 12, 200, 22),
+      y2(hourOp, 12, 200, 22),
+      3,
+      "rgba(2,2,6,255)"
+    );
+    drawLine(
+      ctx,
+      200,
+      200,
+      x2(minutesOp, 60, 200, 22),
+      y2(minutesOp, 60, 200, 22),
+      3,
+      "rgba(2,2,6,255)"
+    );
+    drawLine(
+      ctx,
+      200,
+      200,
+      x2(secondsOp, 60, 200, 22),
+      y2(secondsOp, 60, 200, 22),
+      3,
+      "rgba(2,2,6,255)"
+    );
+    //Circles stop
+    drawCircle(
+      ctx,
+      x2(time.hours, 12, 200, 55),
+      y2(time.hours, 12, 200, 55),
+      10,
+      1,
+      "rgba(2,2,6,255)",
+      "rgba(244,244,244,255)"
+    );
+    drawCircle(
+      ctx,
+      x2(time.minutes, 60, 200, 75),
+      y2(time.minutes, 60, 200, 75),
+      10,
+      1,
+      "rgba(2,2,6,255)",
+      "rgba(244,244,244,255)"
+    );
+    drawCircle(
+      ctx,
+      x2(time.seconds, 60, 200, 95),
+      y2(time.seconds, 60, 200, 95),
+      10,
+      1,
+      "rgba(2,2,6,255)",
+      "rgba(244,244,244,255)"
+    );
+    //Circles start
+    drawCircle(ctx, 200, 200, 7, 7, "rgba(2,2,6,255)", "rgba(2,2,6,255)");
+    drawCircle(ctx, 200, 200, 4, 7, "rgba(86,86,86,255)", "rgba(86,86,86,255)");
     drawCircle(
       ctx,
       200,
@@ -110,15 +159,6 @@ $("#watch").click(function (e) {
       7,
       "rgba(164,164,164,255)",
       "rgba(164,164,164,255)"
-    );
-    drawCircle(
-      ctx,
-      x2(time.seconds, 60, 200, 95),
-      y2(time.seconds, 60, 200, 95),
-      5,
-      5,
-      "rgba(244,244,244,255)",
-      "rgba(244,244,244,255)"
     );
   }
 
