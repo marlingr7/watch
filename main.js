@@ -64,67 +64,70 @@ $("#watch").click(function (e) {
 
     ctx.clearRect(0, 0, 500, 500); // reset canvas
 
+    let xPosition = 200;
+    let yPosition = 195;
+
     //Long lines
     drawLine(
       ctx,
-      200,
-      200,
-      x2(time.hours, 12, 200, 55),
-      y2(time.hours, 12, 200, 55),
+      xPosition,
+      yPosition,
+      x2(time.hours, 12, xPosition, 70),
+      y2(time.hours, 12, yPosition, 70),
+      4.5,
+      "rgba(2,2,6,255)"
+    );
+    drawLine(
+      ctx,
+      xPosition,
+      yPosition,
+      x2(time.minutes, 60, xPosition, 95),
+      y2(time.minutes, 60, yPosition, 95),
       3,
       "rgba(2,2,6,255)"
     );
     drawLine(
       ctx,
-      200,
-      200,
-      x2(time.minutes, 60, 200, 75),
-      y2(time.minutes, 60, 200, 75),
-      3,
-      "rgba(2,2,6,255)"
-    );
-    drawLine(
-      ctx,
-      200,
-      200,
-      x2(time.seconds, 60, 200, 95),
-      y2(time.seconds, 60, 200, 95),
-      3,
-      "rgba(2,2,6,255)"
+      xPosition,
+      yPosition,
+      x2(time.seconds, 60, xPosition, 120),
+      y2(time.seconds, 60, yPosition, 120),
+      1.5,
+      "red"
     );
     //Short lines
     drawLine(
       ctx,
-      200,
-      200,
-      x2(hourOp, 12, 200, 22),
-      y2(hourOp, 12, 200, 22),
+      xPosition,
+      yPosition,
+      x2(hourOp, 12, xPosition, 22),
+      y2(hourOp, 12, yPosition, 22),
+      4.5,
+      "rgba(2,2,6,255)"
+    );
+    drawLine(
+      ctx,
+      xPosition,
+      yPosition,
+      x2(minutesOp, 60, xPosition, 22),
+      y2(minutesOp, 60, yPosition, 22),
       3,
       "rgba(2,2,6,255)"
     );
     drawLine(
       ctx,
-      200,
-      200,
-      x2(minutesOp, 60, 200, 22),
-      y2(minutesOp, 60, 200, 22),
-      3,
-      "rgba(2,2,6,255)"
-    );
-    drawLine(
-      ctx,
-      200,
-      200,
-      x2(secondsOp, 60, 200, 22),
-      y2(secondsOp, 60, 200, 22),
-      3,
-      "rgba(2,2,6,255)"
+      xPosition,
+      yPosition,
+      x2(secondsOp, 60, xPosition, 22),
+      y2(secondsOp, 60, yPosition, 22),
+      1.5,
+      "red"
     );
     //Circles stop
     drawCircle(
       ctx,
-      x2(time.hours, 12, 200, 55),
-      y2(time.hours, 12, 200, 55),
+      x2(time.hours, 12, xPosition, 70),
+      y2(time.hours, 12, yPosition, 70),
       10,
       1,
       "rgba(2,2,6,255)",
@@ -132,31 +135,23 @@ $("#watch").click(function (e) {
     );
     drawCircle(
       ctx,
-      x2(time.minutes, 60, 200, 75),
-      y2(time.minutes, 60, 200, 75),
+      x2(time.minutes, 60, xPosition, 95),
+      y2(time.minutes, 60, yPosition, 95),
       10,
       1,
       "rgba(2,2,6,255)",
       "rgba(244,244,244,255)"
     );
-    drawCircle(
-      ctx,
-      x2(time.seconds, 60, 200, 95),
-      y2(time.seconds, 60, 200, 95),
-      10,
-      1,
-      "rgba(2,2,6,255)",
-      "rgba(244,244,244,255)"
-    );
+    
     //Circles start
-    drawCircle(ctx, 200, 200, 7, 7, "rgba(2,2,6,255)", "rgba(2,2,6,255)");
-    drawCircle(ctx, 200, 200, 4, 7, "rgba(86,86,86,255)", "rgba(86,86,86,255)");
+    drawCircle(ctx, xPosition, yPosition, 10, 0.5, "rgba(86,86,86,255)", "rgba(2,2,6,255)");
+    drawCircle(ctx, xPosition, yPosition, 7, 0.5, "rgba(86,86,86,255)", "rgba(2,2,6,255)");
     drawCircle(
       ctx,
-      200,
-      200,
-      2,
-      7,
+      xPosition,
+      yPosition,
+      3,
+      1,
       "rgba(164,164,164,255)",
       "rgba(164,164,164,255)"
     );

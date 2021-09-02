@@ -19,11 +19,11 @@ body {
 }
 
 .watch {
-  width: 30%;
+  width: 33%;
   height: 100%;
   background-image: url("../img/watch.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
@@ -73,7 +73,7 @@ p {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1150px) {
   body {
     background: linear-gradient(
       0.25turn,
@@ -92,7 +92,7 @@ p {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   body {
     background: linear-gradient(
       0.25turn,
@@ -111,7 +111,7 @@ p {
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 760px) {
   body {
     background: white;
     justify-content: flex-end;
@@ -126,7 +126,7 @@ p {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
   .watch {
     width: 90%;
   }
@@ -134,19 +134,18 @@ p {
   p {
     display: none;
   }
-
-
-
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .watch {
     width: 100%;
+    background-size: contain;
   }
 
   .cont-desc {
-    top: 3%;
+    top: 2%;
     left: 1%;
+    width: 80%;
   }
 
   h1 {
