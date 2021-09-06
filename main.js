@@ -1,5 +1,5 @@
 $("#watch").click(function (e) {
-  document.getElementById("audio").play();
+  $("#audio")[0].play();
   e.preventDefault();
 });
 
