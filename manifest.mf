@@ -1,8 +1,0 @@
-CACHE MANIFEST
-#Version 0.1
-
-index.html
-main.js
-audio/mickey_mouse_hey.mp3
-css/style.css
-img/watch.jpg
