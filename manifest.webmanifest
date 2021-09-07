@@ -11,5 +11,5 @@
   ],
   "name": "Mickey Swatch",
   "short_name": "Watch",
-  "start_url": "/watch/index.html"
+  "start_url": "./index.html"
 }
