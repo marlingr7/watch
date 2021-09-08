@@ -6,7 +6,7 @@ self.addEventListener('install', (e) => {
       './css/style.css',
       './audio/mickey_mouse_hey.mp3',
       './img/mickey_icon.jpg',
-      '.img/watch.jpg',
+      './img/watch.jpg',
     ])),
   );
 });
