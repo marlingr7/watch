@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/fontello.css">
     <link rel="icon" type="image/png" href="img/mickey.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <link rel="manifest" href="manifest.webmanifest"> -->
+    <link rel="manifest" href="manifest.webmanifest">
     <title>Watch</title>
 </head>
 
@@ -28,13 +28,6 @@
     </div>
     <button class="add-button">Add to home screen <i class="icon-install"></i></button>
     <script src="main.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker
-                .register('./sw.js')
-                .then(() => { console.log('Service Worker Registered'); });
-        }
-    </script>
 </body>
 
 </html>
