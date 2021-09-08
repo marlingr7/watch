@@ -11,7 +11,7 @@ self.addEventListener('install', (e) => {
       './font/fontello.ttf',
       './font/fontello.woff',
       './font/fontello.woff2',
-      './img/mickey_icon.jpg',
+      './img/mickey_icon_192x192.png',
       './img/watch.jpg',
       './img/mickey.ico',
     ])),
