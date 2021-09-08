@@ -3,6 +3,7 @@ self.addEventListener('install', (e) => {
     caches.open('watch-store').then((cache) => cache.addAll([
       './index.html',
       './main.js',
+      './manifest.mf',
       './audio/mickey_mouse_hey.mp3',
       './css/style.css',
       './css/fontello.css',
