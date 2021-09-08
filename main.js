@@ -174,11 +174,7 @@ $("#watch").click(function (e) {
   }
 })();
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('./sw.js')
-    .then(() => { console.log('Service Worker Registered'); });
-}
+
 
 // Code to handle install prompt on desktop
 
