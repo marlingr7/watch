@@ -9,7 +9,7 @@
       "type": "image/png"
     }
   ],
-  "name": "Mickey Swatch",
-  "short_name": "Watch",
+  "name": "Mickey Mouse Swatch",
+  "short_name": "Mickey Watch",
   "start_url": "./index.html"
 }
