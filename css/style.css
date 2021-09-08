@@ -50,6 +50,7 @@ h1 {
   font-size: 20px;
   font-weight: 600;
   color: rgba(64, 64, 64, 255);
+  text-align: center;
 }
 
 p {
@@ -60,8 +61,30 @@ p {
 
 .add-button {
   position: absolute;
-  top: 1px;
-  left: 1px;
+  width: 20%;
+  height: 10%;
+  font-family: "Kaushan Script", cursive;
+  background-color: black;
+  box-shadow: 5px 5px 5px rgb(41, 0, 0);
+  color: white;
+  border: 1px solid rgb(85, 1, 1);
+  top: 80%;
+  left: 75%;
+  border-radius: 150px;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: white;
+  box-shadow: 5px 5px 5px rgb(250, 30, 30);
+  color: black;
+  border: 1px solid rgb(255, 42, 42);
+}
+
+i {
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -96,6 +119,10 @@ p {
   .cont-desc {
     width: 20%;
   }
+
+  .add-button {
+    left: 78%;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -115,6 +142,12 @@ p {
   .cont-desc {
     width: 15%;
   }
+
+  .add-button {
+    width: 15%;
+    left: 82%;
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -130,6 +163,21 @@ p {
   .cont-desc {
     width: 30%;
   }
+
+  .add-button {
+    width: 35%;
+    height: 7%;
+    left: 2%;
+    top: 90%;
+    font-size: 20px;
+  }
+
+  .add-button:hover {
+    background-color: black;
+    box-shadow: 5px 5px 5px rgb(41, 0, 0);
+    color: white;
+    border: 1px solid rgb(85, 1, 1);
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -139,6 +187,10 @@ p {
 
   p {
     display: none;
+  }
+
+  .add-button {
+    width: 30%;
   }
 }
 
@@ -150,8 +202,8 @@ p {
 
   .cont-desc {
     top: 2%;
-    left: 1%;
-    width: 80%;
+    left: 15%;
+    width: 70%;
   }
 
   h1 {
@@ -160,5 +212,13 @@ p {
 
   canvas {
     height: 55%;
+  }
+
+  .add-button {
+    width: 70%;
+    height: 5%;
+    left: 15%;
+    top: 93%;
+    font-size: 15px;
   }
 }

@@ -1,12 +1,19 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open('fox-store').then((cache) => cache.addAll([
+    caches.open('watch-store').then((cache) => cache.addAll([
       './index.html',
       './main.js',
-      './css/style.css',
       './audio/mickey_mouse_hey.mp3',
+      './css/style.css',
+      './css/fontello.css',
+      './font/fontello.eot',
+      './font/fontello.svg',
+      './font/fontello.ttf',
+      './font/fontello.woff',
+      './font/fontello.woff2',
       './img/mickey_icon.jpg',
       './img/watch.jpg',
+      './img/mickey.ico',
     ])),
   );
 });
