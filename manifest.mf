@@ -4,7 +4,6 @@ CACHE MANIFEST
 index.html
 main.js
 sw.js
-manifest.webmanifest
 /audio/mickey_mouse_hey.mp3
 /css/style.css
 /css/fontello.css
