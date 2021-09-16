@@ -170,6 +170,7 @@ i {
     left: 2%;
     top: 90%;
     font-size: 20px;
+    box-shadow: 0px 0px 0px white;
   }
 
   .add-button:hover {
