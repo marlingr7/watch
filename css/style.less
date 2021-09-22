@@ -1,0 +1,342 @@
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-size: 20px;
+@color-grey: rgba(64, 64, 64, 255);
+@border-radius: 150px;
+@btn-width: 20%;
+@btn-height: 10%;
+
+@max1300: ~"screen and (max-width: 1300px)";
+@max1150: ~"screen and (max-width: 1150px)";
+@max900: ~"screen and (max-width: 900px)";
+@max760: ~"screen and (max-width: 760px)";
+@max650: ~"screen and (max-width: 650px)";
+@max500: ~"screen and (max-width: 500px)";
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  .display();
+}
+
+.body-light {
+  background: linear-gradient(
+    0.25turn,
+    rgba(255, 213, 171, 255) 33%,
+    white 33% 66%,
+    rgba(179, 182, 187, 255) 66%
+  );
+  @media @max1300 {
+    background: linear-gradient(
+      0.25turn,
+      rgba(255, 213, 171, 255) 30%,
+      white 33% 66%,
+      rgba(179, 182, 187, 255) 70%
+    );
+  }
+  @media @max1150 {
+    background: linear-gradient(
+      0.25turn,
+      rgba(255, 213, 171, 255) 25%,
+      white 33% 66%,
+      rgba(179, 182, 187, 255) 75%
+    );
+  }
+  @media @max900 {
+    background: linear-gradient(
+      0.25turn,
+      rgba(255, 213, 171, 255) 20%,
+      white 33% 66%,
+      rgba(179, 182, 187, 255) 80%
+    );
+  }
+  @media @max760 {
+    background: white;
+  }
+}
+
+.body-dark {
+  background: linear-gradient(
+    0.25turn,
+    rgba(252, 188, 2, 255) 33%,
+    white 33% 66%,
+    rgba(221, 28, 33, 255) 66%
+  );
+  @media @max1300 {
+    background: linear-gradient(
+      0.25turn,
+      rgba(252, 188, 2, 255) 30%,
+      white 33% 66%,
+      rgba(221, 28, 33, 255) 70%
+    );
+  }
+  @media @max1150 {
+    background: linear-gradient(
+      0.25turn,
+      rgba(252, 188, 2, 255) 25%,
+      white 33% 66%,
+      rgba(221, 28, 33, 255) 75%
+    );
+  }
+  @media @max900 {
+    background: linear-gradient(
+      0.25turn,
+      rgba(252, 188, 2, 255) 20%,
+      white 33% 66%,
+      rgba(221, 28, 33, 255) 80%
+    );
+  }
+  @media @max760 {
+    background: white;
+  }
+}
+
+.watch {
+  width: 33%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .display();
+  @media @max1300 {
+    width: 40%;
+  }
+  @media @max1150 {
+    width: 50%;
+  }
+  @media @max900 {
+    width: 60%;
+  }
+  @media @max760 {
+    width: 70%;
+  }
+  @media @max650 {
+    width: 90%;
+  }
+  @media @max500 {
+    width: 100%;
+    background-size: contain;
+  }
+}
+
+.watch-light {
+  background-image: url("../img/watch_light.png");
+}
+
+.watch-dark {
+  background-image: url("../img/watch.jpg");
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 65%;
+  @media @max500 {
+    height: 55%;
+  }
+}
+
+.cont-desc {
+  width: 25%;
+  height: auto;
+  font-family: "Kaushan Script", cursive;
+  position: absolute;
+  left: 3%;
+  top: 3%;
+  p {
+    font-size: @font-size - 4px;
+    opacity: 0.7;
+    @media @max650 {
+      display: none;
+    }
+  }
+  @media @max1150 {
+    width: 20%;
+  }
+  @media @max900 {
+    width: 15%;
+  }
+  @media @max760 {
+    width: 30%;
+  }
+  @media @max500 {
+    top: 2%;
+    left: 20%;
+    width: 60%;
+  }
+}
+
+h1 {
+  font-size: @font-size;
+  font-weight: 600;
+  text-align: center;
+}
+
+.text-light {
+  color: @color-grey;
+}
+
+.text-dark {
+  color: white;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+.add-button {
+  position: absolute;
+  width: @btn-width;
+  height: @btn-height;
+  font-family: "Kaushan Script", cursive;
+  top: 80%;
+  left: 3%;
+  border-radius: @border-radius;
+  font-size: @font-size;
+  i {
+    margin-left: 10px;
+  }
+  @media @max900 {
+    width: 15%;
+    font-size: 15px;
+  }
+  @media @max760 {
+    width: 35%;
+    left: 2%;
+    top: 87%;
+  }
+  @media @max650 {
+    width: 30%;
+  }
+  @media @max500 {
+    width: 70%;
+    height: 7%;
+    left: 15%;
+    top: 93%;
+  }
+}
+
+.add-button-light {
+  background-color: rgba(179, 182, 187, 255);
+  box-shadow: 5px 5px 5px saturate(@color-grey, 5%);
+  border: 1px solid @color-grey;
+}
+
+.add-button-dark {
+  background-color: black;
+  box-shadow: 0px 0px 0px black;
+  border: 1px solid saturate(black, 5%);
+}
+
+.add-button:hover {
+  width: @btn-width + 1%;
+  height: @btn-height + 1%;
+}
+
+.change-theme {
+  width: 60px;
+  height: 30px;
+  position: absolute;
+  left: 60%;
+  top: 5%;
+  border-radius: @border-radius;
+  .display();
+  #change-theme {
+    width: 50%;
+    margin: 0;
+    height: 100%;
+    border-radius: @border-radius;
+  }
+  i {
+    width: 100%;
+    height: 100%;
+    .display();
+    font-size: @font-size;
+  }
+  p {
+    width: 50%;
+    height: 50%;
+    font-size: 3px;
+    color: white;
+    .display();
+  }
+  @media @max1150 {
+    left: 65%;
+  }
+  @media @max900 {
+    left: 70%;
+  }
+  @media @max760 {
+    left: 85%;
+  }
+  @media @max500 {
+    top: 3%;
+  }
+}
+
+.change-theme-light {
+  background: linear-gradient(
+    0.25turn,
+    rgba(221, 28, 33, 255),
+    rgba(252, 188, 2, 255)
+  );
+}
+
+.change-theme-dark {
+  background: rgba(61, 61, 61, 255);
+}
+
+.btn-theme-light {
+  background-color: white;
+  border: 1px solid rgba(255, 194, 0, 255);
+}
+
+.btn-theme-dark {
+  background-color: rgba(151, 151, 151, 255);
+  border: 1px solid rgba(101, 101, 101, 255);
+}
+
+.i-light {
+  color: rgba(252, 188, 2, 255);
+}
+
+.i-dark {
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: flex;
+}
+
+@media screen and (max-width: 760px) {
+  body {
+    justify-content: flex-end;
+  }
+
+  @font-size: 15px;
+
+  .add-button-light {
+    box-shadow: 0px 0px 0px white;
+    border: 1px solid transparent;
+  }
+
+  h1 {
+    color: @color-grey !important;
+  }
+}

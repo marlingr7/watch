@@ -10,26 +10,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/fontello.css">
-    <link rel="icon" type="image/png" href="img/mickey.ico" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="manifest" href="manifest.webmanifest">
+    <script src="moment-with-locales.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- <link rel="manifest" href="manifest.webmanifest"> -->
     <title>Watch</title>
 </head>
 
-<body>
+<body class="body-light">
 
     <audio src="audio/mickey_mouse_hey.mp3" id="audio"></audio>
-    <div class="watch" id="watch">
+    <div class="watch watch-light" id="watch">
         <canvas id="clock-canvas" width="400" height="400"></canvas>
     </div>
     <div class="cont-desc">
-        <h1>Swatch Damien Hirts Spot Mickey Watch</h1>
-        <p>Swiss quartz movement, dial decorated with Mickey with the arms with white gloves for the hands and yellow
+        <h1 class="text-light">Swatch Damien Hirts Spot Mickey Watch</h1>
+        <p class="text-light">Swiss quartz movement, dial decorated with Mickey with the arms with white gloves for the
+            hands and yellow
             shoes at 6 o'clock and 7 o'clock, dark background. Black box. Matching yellow and red plastic bracelet.</p>
     </div>
-    <button class="add-button">Add to home screen <i class="icon-install"></i></button>
+    <button class="add-button add-button-light text-light">Add to home screen <i class="icon-install"></i></button>
+    <div class="change-theme change-theme-light">
+        <p id="p-dark" class="hidden">DARK-THEME</p>
+        <button class="btn-theme-light" id="change-theme">
+            <i class="icon-sun-filled show i-light" id="i-light"></i>
+            <i class="icon-moon-inv hidden i-dark" id="i-dark"></i>
+        </button>
+        <p id="p-light" class="show">LIGHT-THEME</p>
+    </div>
+
     <script src="main.js"></script>
-    
+
+
+
 </body>
 
 </html>

@@ -1,3 +1,54 @@
+let elements = [
+  ".body-light",
+  ".watch-light",
+  ".text-light",
+  ".add-button-light",
+  ".change-theme-light",
+  ".btn-theme-light",
+  ".i-light",
+];
+let className = [
+  "body-dark",
+  "watch-dark",
+  "text-dark",
+  "add-button-dark",
+  "change-theme-dark",
+  "btn-theme-dark",
+  "i-dark",
+];
+
+let hiddenShow = ["#p-dark", "#p-light", "#i-light", "#i-dark"];
+
+(function theme() {
+  if (sessionStorage.theme == "dark") {
+    for (let j = 0; j < hiddenShow.length; j++) {
+      if ($(hiddenShow[j]).hasClass("hidden")) {
+        $(hiddenShow[j]).removeClass("hidden").addClass("show");
+      } else {
+        $(hiddenShow[j]).removeClass("show").addClass("hidden");
+      }
+    }
+
+    for (i = 0; i < elements.length; i++) {
+      $(elements[i]).toggleClass(className[i]);
+    }
+  }
+})();
+
+$(document).ready(function () {
+  if (localStorage.date && localStorage.date != moment().format("YYYYMMDD")) {
+    time = moment(localStorage.date, "YYYYMMDD").fromNow();
+    Swal.fire(
+      "You have visited this page ago " + time,
+      "Thank you for speaking to us again",
+      "info"
+    );
+    localStorage.date = moment().format("YYYYMMDD");
+  } else {
+    localStorage.date = moment().format("YYYYMMDD");
+  }
+});
+
 $("#watch").click(function (e) {
   $("#audio")[0].play();
   e.preventDefault();
@@ -196,7 +247,7 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// Code to handle install prompt on desktop
+//Code to handle install prompt on desktop
 
 let deferredPrompt;
 const addBtn = document.querySelector(".add-button");
@@ -225,4 +276,26 @@ window.addEventListener("beforeinstallprompt", (e) => {
       deferredPrompt = null;
     });
   });
+});
+
+$("#change-theme").click(function (e) {
+  for (let j = 0; j < hiddenShow.length; j++) {
+    if ($(hiddenShow[j]).hasClass("hidden")) {
+      $(hiddenShow[j]).removeClass("hidden").addClass("show");
+    } else {
+      $(hiddenShow[j]).removeClass("show").addClass("hidden");
+    }
+  }
+
+  for (i = 0; i < elements.length; i++) {
+    $(elements[i]).toggleClass(className[i]);
+  }
+
+  if (sessionStorage.theme == undefined || sessionStorage.theme == "light") {
+    sessionStorage.theme = "dark";
+  } else {
+    sessionStorage.theme = "light";
+  }
+
+  e.preventDefault();
 });
