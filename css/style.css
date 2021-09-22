@@ -16,21 +16,41 @@ body {
   align-items: center;
 }
 .body-light {
-  background: linear-gradient(0.25turn, #ffd5ab 33%, #ffffff 33% 66%, #b3b6bb 66%);
+  background: linear-gradient(
+    0.25turn,
+    #ffd5ab 33%,
+    #ffffff 33% 66%,
+    #b3b6bb 66%
+  );
 }
 @media screen and (max-width: 1300px) {
   .body-light {
-    background: linear-gradient(0.25turn, #ffd5ab 30%, #ffffff 33% 66%, #b3b6bb 70%);
+    background: linear-gradient(
+      0.25turn,
+      #ffd5ab 30%,
+      #ffffff 33% 66%,
+      #b3b6bb 70%
+    );
   }
 }
 @media screen and (max-width: 1150px) {
   .body-light {
-    background: linear-gradient(0.25turn, #ffd5ab 25%, #ffffff 33% 66%, #b3b6bb 75%);
+    background: linear-gradient(
+      0.25turn,
+      #ffd5ab 25%,
+      #ffffff 33% 66%,
+      #b3b6bb 75%
+    );
   }
 }
 @media screen and (max-width: 900px) {
   .body-light {
-    background: linear-gradient(0.25turn, #ffd5ab 20%, #ffffff 33% 66%, #b3b6bb 80%);
+    background: linear-gradient(
+      0.25turn,
+      #ffd5ab 20%,
+      #ffffff 33% 66%,
+      #b3b6bb 80%
+    );
   }
 }
 @media screen and (max-width: 760px) {
@@ -39,21 +59,41 @@ body {
   }
 }
 .body-dark {
-  background: linear-gradient(0.25turn, #fcbc02 33%, #ffffff 33% 66%, #dd1c21 66%);
+  background: linear-gradient(
+    0.25turn,
+    #fcbc02 33%,
+    #ffffff 33% 66%,
+    #dd1c21 66%
+  );
 }
 @media screen and (max-width: 1300px) {
   .body-dark {
-    background: linear-gradient(0.25turn, #fcbc02 30%, #ffffff 33% 66%, #dd1c21 70%);
+    background: linear-gradient(
+      0.25turn,
+      #fcbc02 30%,
+      #ffffff 33% 66%,
+      #dd1c21 70%
+    );
   }
 }
 @media screen and (max-width: 1150px) {
   .body-dark {
-    background: linear-gradient(0.25turn, #fcbc02 25%, #ffffff 33% 66%, #dd1c21 75%);
+    background: linear-gradient(
+      0.25turn,
+      #fcbc02 25%,
+      #ffffff 33% 66%,
+      #dd1c21 75%
+    );
   }
 }
 @media screen and (max-width: 900px) {
   .body-dark {
-    background: linear-gradient(0.25turn, #fcbc02 20%, #ffffff 33% 66%, #dd1c21 80%);
+    background: linear-gradient(
+      0.25turn,
+      #fcbc02 20%,
+      #ffffff 33% 66%,
+      #dd1c21 80%
+    );
   }
 }
 @media screen and (max-width: 760px) {
@@ -103,7 +143,7 @@ body {
   }
 }
 .watch-light {
-  background-image: url("../img/watch_light.png");
+  background-image: url("../img/watch_light.jpeg");
 }
 .watch-dark {
   background-image: url("../img/watch.jpg");
@@ -153,7 +193,7 @@ canvas {
 }
 @media screen and (max-width: 500px) {
   .cont-desc {
-    top: 2%;
+    top: 0;
     left: 20%;
     width: 60%;
   }

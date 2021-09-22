@@ -19,6 +19,8 @@ let className = [
 
 let hiddenShow = ["#p-dark", "#p-light", "#i-light", "#i-dark"];
 
+//Session Storage Saving Theme
+
 (function theme() {
   if (sessionStorage.theme == "dark") {
     for (let j = 0; j < hiddenShow.length; j++) {
@@ -35,12 +37,14 @@ let hiddenShow = ["#p-dark", "#p-light", "#i-light", "#i-dark"];
   }
 })();
 
+//Local Storage Saving date
+
 $(document).ready(function () {
   if (localStorage.date && localStorage.date != moment().format("YYYYMMDD")) {
     time = moment(localStorage.date, "YYYYMMDD").fromNow();
     Swal.fire(
-      "You have visited this page ago " + time,
-      "Thank you for speaking to us again",
+      "You have accessed this page " + time,
+      "Thanks for choosing us",
       "info"
     );
     localStorage.date = moment().format("YYYYMMDD");
@@ -53,6 +57,8 @@ $("#watch").click(function (e) {
   $("#audio")[0].play();
   e.preventDefault();
 });
+
+//Paint canvas
 
 (function () {
   function x2(n, i, x1, r) {
@@ -251,7 +257,6 @@ if ("serviceWorker" in navigator) {
 
 let deferredPrompt;
 const addBtn = document.querySelector(".add-button");
-//addBtn.style.display = 'none';
 
 window.addEventListener("beforeinstallprompt", (e) => {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -277,6 +282,8 @@ window.addEventListener("beforeinstallprompt", (e) => {
     });
   });
 });
+
+//Cahnge theme
 
 $("#change-theme").click(function (e) {
   for (let j = 0; j < hiddenShow.length; j++) {
