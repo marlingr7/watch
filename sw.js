@@ -6,7 +6,6 @@ self.addEventListener("install", (e) => {
         cache.addAll([
           "./index.html",
           "./main.js",
-          "./manifest.mf",
           "./audio/mickey_mouse_hey.mp3",
           "./css/style.css",
           "./css/fontello.css",
@@ -16,20 +15,17 @@ self.addEventListener("install", (e) => {
           "./font/fontello.woff",
           "./font/fontello.woff2",
           "./img/watch.jpg",
-          "./img/watch_light.jpg",
-          "./img/mickey.ico",
-          "./img/favicon.ico",
+          "./img/watch_light.jpeg",
+          "./img/android-chrome-192x192.png",
+          "./img/android-chrome-512x512.png",
           "./img/apple-touch-icon.png",
-          "./img/apple-touch-icon-57x57.png",
-          "./img/apple-touch-icon-72x72.png",
-          "./img/apple-touch-icon-76x76.png",
-          "./img/apple-touch-icon-114x114.png",
-          "./img/apple-touch-icon-120x120.png",
-          "./img/apple-touch-icon-144x144.png",
-          "./img/apple-touch-icon-152x152.png",
-          "./img/apple-touch-icon-180x180.png",
-          "./img/favicon-32x32.png",
+          "./img/browserconfig.xml",
+          "./img/favicon.ico",
           "./img/favicon-16x16.png",
+          "./img/favicon-32x32.png",
+          "./img/mstile-150x150.png",
+          "./img/safari-pinned-tab.svg",
+          
         ])
       )
   );
