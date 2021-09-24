@@ -40,7 +40,7 @@ body {
     background: linear-gradient(
       0.25turn,
       rgba(255, 213, 171, 255) 30%,
-      white 33% 66%,
+      white 30% 70%,
       rgba(179, 182, 187, 255) 70%
     );
   }
@@ -48,7 +48,7 @@ body {
     background: linear-gradient(
       0.25turn,
       rgba(255, 213, 171, 255) 25%,
-      white 33% 66%,
+      white 25% 75%,
       rgba(179, 182, 187, 255) 75%
     );
   }
@@ -56,7 +56,7 @@ body {
     background: linear-gradient(
       0.25turn,
       rgba(255, 213, 171, 255) 20%,
-      white 33% 66%,
+      white 20% 80%,
       rgba(179, 182, 187, 255) 80%
     );
   }
@@ -76,7 +76,7 @@ body {
     background: linear-gradient(
       0.25turn,
       rgba(252, 188, 2, 255) 30%,
-      white 33% 66%,
+      white 30% 70%,
       rgba(221, 28, 33, 255) 70%
     );
   }
@@ -84,7 +84,7 @@ body {
     background: linear-gradient(
       0.25turn,
       rgba(252, 188, 2, 255) 25%,
-      white 33% 66%,
+      white 25% 75%,
       rgba(221, 28, 33, 255) 75%
     );
   }
@@ -92,7 +92,7 @@ body {
     background: linear-gradient(
       0.25turn,
       rgba(252, 188, 2, 255) 20%,
-      white 33% 66%,
+      white 20% 80%,
       rgba(221, 28, 33, 255) 80%
     );
   }
@@ -209,22 +209,20 @@ button {
     margin-left: 10px;
   }
   @media @max900 {
-    width: 15%;
-    font-size: 15px;
+    width: @btn-width - 5%;
+    font-size: @font-size - 5px;
   }
   @media @max760 {
-    width: 35%;
+    width: @btn-width + 15%;
     left: 2%;
     top: 87%;
   }
   @media @max650 {
-    width: 30%;
+    width: @btn-width + 10%;
   }
   @media @max500 {
-    width: 70%;
-    height: 7%;
-    left: 15%;
-    top: 93%;
+    width: @btn-width + 40%;
+    left: 20%;
   }
 }
 
@@ -243,6 +241,19 @@ button {
 .add-button:hover {
   width: @btn-width + 1%;
   height: @btn-height + 1%;
+  @media @max900 {
+    width: @btn-width - 5%;
+    height: @btn-height;
+  }
+  @media @max760 {
+    width: @btn-width + 15%;
+  }
+  @media @max650 {
+    width: @btn-width + 10%;
+  }
+  @media @max500 {
+    width: @btn-width + 40%;
+  }
 }
 
 .change-theme {
@@ -252,10 +263,11 @@ button {
   left: 60%;
   top: 5%;
   border-radius: @border-radius;
+  border: 1px solid transparent;
+  padding: 0;
   .display();
-  #change-theme {
+  .btn-change-theme {
     width: 50%;
-    margin: 0;
     height: 100%;
     border-radius: @border-radius;
   }
@@ -300,12 +312,10 @@ button {
 
 .btn-theme-light {
   background-color: white;
-  border: 1px solid rgba(255, 194, 0, 255);
 }
 
 .btn-theme-dark {
   background-color: rgba(151, 151, 151, 255);
-  border: 1px solid rgba(101, 101, 101, 255);
 }
 
 .i-light {
@@ -336,7 +346,8 @@ button {
     border: 1px solid transparent;
   }
 
-  h1 {
+  h1,
+  .cont-desc p {
     color: @color-grey !important;
   }
 }

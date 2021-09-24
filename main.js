@@ -21,7 +21,7 @@ let hiddenShow = ["#p-dark", "#p-light", "#i-light", "#i-dark"];
 
 //Session Storage Saving Theme
 
-(function theme() {
+(function () {
   if (sessionStorage.theme == "dark") {
     for (let j = 0; j < hiddenShow.length; j++) {
       if ($(hiddenShow[j]).hasClass("hidden")) {
@@ -53,7 +53,9 @@ $(document).ready(function () {
   }
 });
 
-$("#watch").click(function (e) {
+//Sound of mickey hey
+
+$("#clock-canvas").click(function (e) {
   $("#audio")[0].play();
   e.preventDefault();
 });
@@ -199,7 +201,6 @@ $("#watch").click(function (e) {
       "rgba(2,2,6,255)",
       "rgba(244,244,244,255)"
     );
-
     //Circles start
     drawCircle(
       ctx,
@@ -230,7 +231,7 @@ $("#watch").click(function (e) {
     );
   }
 
-  let canvas = document.getElementById("clock-canvas");
+  let canvas = $("#clock-canvas")[0];
   let ctx;
 
   if (canvas.getContext) {
@@ -242,8 +243,7 @@ $("#watch").click(function (e) {
       startClock(ctx);
     }, 1000);
   } else {
-    document.getElementsByTagName("body")[0].innerHTML +=
-      "<h2>Canvas not supported.</h2>";
+    Swal.fire("Sorry. Canvas not supported", "error");
   }
 })();
 
@@ -256,32 +256,37 @@ if ("serviceWorker" in navigator) {
 //Code to handle install prompt on desktop
 
 let deferredPrompt;
-const addBtn = document.querySelector(".add-button");
+const addBtn = $(".add-button")[0];
 
-window.addEventListener("beforeinstallprompt", (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-  // Update UI to notify the user they can add to home screen
-  addBtn.style.display = "block";
+let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+  addBtn.className = "hidden";
+} else {
+  window.addEventListener("beforeinstallprompt", (e) => {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    // Update UI to notify the user they can add to home screen
+    addBtn.style.display = "block";
 
-  addBtn.addEventListener("click", () => {
-    // hide our user interface that shows our A2HS button
-    addBtn.style.display = "none";
-    // Show the prompt
-    deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === "accepted") {
-        console.log("User accepted the A2HS prompt");
-      } else {
-        console.log("User dismissed the A2HS prompt");
-      }
-      deferredPrompt = null;
+    addBtn.addEventListener("click", () => {
+      // hide our user interface that shows our A2HS button
+      addBtn.style.display = "none";
+      // Show the prompt
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User accepted the A2HS prompt");
+        } else {
+          console.log("User dismissed the A2HS prompt");
+        }
+        deferredPrompt = null;
+      });
     });
   });
-});
+}
 
 //Cahnge theme
 

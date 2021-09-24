@@ -28,7 +28,7 @@ body {
     background: linear-gradient(
       0.25turn,
       #ffd5ab 30%,
-      #ffffff 33% 66%,
+      #ffffff 30% 70%,
       #b3b6bb 70%
     );
   }
@@ -38,7 +38,7 @@ body {
     background: linear-gradient(
       0.25turn,
       #ffd5ab 25%,
-      #ffffff 33% 66%,
+      #ffffff 25% 75%,
       #b3b6bb 75%
     );
   }
@@ -48,7 +48,7 @@ body {
     background: linear-gradient(
       0.25turn,
       #ffd5ab 20%,
-      #ffffff 33% 66%,
+      #ffffff 20% 80%,
       #b3b6bb 80%
     );
   }
@@ -71,7 +71,7 @@ body {
     background: linear-gradient(
       0.25turn,
       #fcbc02 30%,
-      #ffffff 33% 66%,
+      #ffffff 30% 70%,
       #dd1c21 70%
     );
   }
@@ -81,7 +81,7 @@ body {
     background: linear-gradient(
       0.25turn,
       #fcbc02 25%,
-      #ffffff 33% 66%,
+      #ffffff 25% 75%,
       #dd1c21 75%
     );
   }
@@ -91,7 +91,7 @@ body {
     background: linear-gradient(
       0.25turn,
       #fcbc02 20%,
-      #ffffff 33% 66%,
+      #ffffff 20% 80%,
       #dd1c21 80%
     );
   }
@@ -246,10 +246,8 @@ button {
 }
 @media screen and (max-width: 500px) {
   .add-button {
-    width: 70%;
-    height: 7%;
-    left: 15%;
-    top: 93%;
+    width: 60%;
+    left: 20%;
   }
 }
 .add-button-light {
@@ -266,6 +264,27 @@ button {
   width: 21%;
   height: 11%;
 }
+@media screen and (max-width: 900px) {
+  .add-button:hover {
+    width: 15%;
+    height: 10%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .add-button:hover {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .add-button:hover {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .add-button:hover {
+    width: 60%;
+  }
+}
 .change-theme {
   width: 60px;
   height: 30px;
@@ -273,13 +292,14 @@ button {
   left: 60%;
   top: 5%;
   border-radius: 150px;
+  border: 1px solid transparent;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.change-theme #change-theme {
+.change-theme .btn-change-theme {
   width: 50%;
-  margin: 0;
   height: 100%;
   border-radius: 150px;
 }
@@ -317,7 +337,7 @@ button {
 }
 @media screen and (max-width: 500px) {
   .change-theme {
-    top: 3%;
+    top: 5%;
   }
 }
 .change-theme-light {
@@ -328,11 +348,9 @@ button {
 }
 .btn-theme-light {
   background-color: white;
-  border: 1px solid #ffc200;
 }
 .btn-theme-dark {
   background-color: #979797;
-  border: 1px solid #656565;
 }
 .i-light {
   color: #fcbc02;
@@ -354,7 +372,8 @@ button {
     box-shadow: 0px 0px 0px white;
     border: 1px solid transparent;
   }
-  h1 {
+  h1,
+  .cont-desc p {
     color: #404040 !important;
   }
 }

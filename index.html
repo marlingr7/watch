@@ -28,7 +28,7 @@
 <body class="body-light">
 
     <audio src="audio/mickey_mouse_hey.mp3" id="audio"></audio>
-    <div class="watch watch-light" id="watch">
+    <div class="watch watch-light">
         <canvas id="clock-canvas" width="400" height="400"></canvas>
     </div>
     <div class="cont-desc">
@@ -38,14 +38,14 @@
             shoes at 6 o'clock and 7 o'clock, dark background. Black box. Matching yellow and red plastic bracelet.</p>
     </div>
     <button class="add-button add-button-light text-light">Add to home screen <i class="icon-install"></i></button>
-    <div class="change-theme change-theme-light">
+    <button class="change-theme change-theme-light" id="change-theme">
         <p id="p-dark" class="hidden">DARK-THEME</p>
-        <button class="btn-theme-light" id="change-theme">
+        <div class="btn-theme-light btn-change-theme">
             <i class="icon-sun-filled show i-light" id="i-light"></i>
             <i class="icon-moon-inv hidden i-dark" id="i-dark"></i>
-        </button>
+        </div>
         <p id="p-light" class="show">LIGHT-THEME</p>
-    </div>
+    </button>
 
     <script src="main.js"></script>
 

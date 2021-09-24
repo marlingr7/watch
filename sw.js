@@ -25,7 +25,6 @@ self.addEventListener("install", (e) => {
           "./img/favicon-32x32.png",
           "./img/mstile-150x150.png",
           "./img/safari-pinned-tab.svg",
-          
         ])
       )
   );
