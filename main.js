@@ -260,7 +260,7 @@ const addBtn = $(".add-button")[0];
 
 let userAgent = navigator.userAgent || navigator.vendor || window.opera;
 if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-  addBtn.className = "hidden";
+  addBtn.style.display = "none";
 } else {
   window.addEventListener("beforeinstallprompt", (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
